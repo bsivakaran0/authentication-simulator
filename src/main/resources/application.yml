@@ -1,0 +1,25 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /simulator
+  
+spring:
+  application:
+    name: simulator-service
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+# External BIN check API URL
+tds:
+  server-url: http://localhost:8080/authNservice/v1/checkBin/:bankId/:merchantTxnId
+  merchant-url: http://localhost:8090/simulator/cres
+  
+jwe:
+  key-store-path: E:/Work/jwe_keystore.jks
+  key-store-cred: password
+  key-cred: password
+  
+mock:
+  file-location: E:\Work\eclipse-workspace\simulator\src\main\resources\mock-response.json

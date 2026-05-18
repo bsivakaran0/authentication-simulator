@@ -1,0 +1,52 @@
+{
+  "4567890000000001": {
+    "threeDSServerTransID": "SRVTRANS001",
+    "acsChallengeMandated": "Y",
+    "acsOperatorID": "ACSOP123",
+    "acsReferenceNumber": "ACSREF001",
+    "acsTransID": "ACSTRANS001",
+    "authenticationType": "02",
+    "authenticationValue": "authenticationvalue000000000",
+    "broadInfo": "Additional info",
+    "cardholderInfo": "Cardholder details",
+    "dsReferenceNumber": "DSREF001",
+    "dsTransID": "DSTRANS001",
+    "eci": "05",
+    "messageType": "ARes",
+    "messageVersion": "2.2.0",
+    "transStatus": "Y"
+  },
+  "4567890000000002": {
+    "threeDSServerTransID": "SRVTRANS001",
+    "acsChallengeMandated": "Y",
+    "acsOperatorID": "ACSOP123",
+    "acsReferenceNumber": "ACSREF001",
+    "acsTransID": "ACSTRANS001",
+    "acsURL": "http://103.108.117.56:8090/simulator/creq",
+    "authenticationType": "02",
+    "authenticationValue": "authenticationvalue000000000",
+    "broadInfo": "Additional info",
+    "cardholderInfo": "Cardholder details",
+    "dsReferenceNumber": "DSREF001",
+    "dsTransID": "DSTRANS001",
+    "eci": "05",
+    "messageType": "ARes",
+    "messageVersion": "2.2.0",
+    "transStatus": "C"
+  },
+  "4567890000000003": {
+    "threeDSServerTransID": "SRVTRANS001",
+    "acsOperatorID": "ACSOP123",
+    "acsReferenceNumber": "ACSREF001",
+    "acsTransID": "ACSTRANS001",
+    "broadInfo": "Additional info",
+    "cardholderInfo": "Cardholder details",
+    "dsReferenceNumber": "DSREF001",
+    "dsTransID": "DSTRANS001",
+    "eci": "07",
+    "messageType": "ARes",
+    "messageVersion": "2.2.0",
+    "transStatus": "N",
+    "transStatusReason":"01"
+  }
+}
