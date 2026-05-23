@@ -1,7 +1,11 @@
 package com.paymoni.simulator.controller;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -34,7 +38,7 @@ public class CardCaptureController {
         product1.setId(1L);
         product1.setName("Wireless Headphones");
         product1.setSku("WH-1000XM4");
-        product1.setPrice(new BigDecimal("249.99"));
+        product1.setPrice(new BigDecimal("5.00"));
         product1.setImageUrl("headphone.jpg");
         product1.setDescription("Industry-leading noise cancellation");
 
@@ -42,7 +46,7 @@ public class CardCaptureController {
         product2.setId(2L);
         product2.setName("Smartphone");
         product2.setSku("SP-12PRO");
-        product2.setPrice(new BigDecimal("899.99"));
+        product2.setPrice(new BigDecimal("5.00"));
         product2.setImageUrl("smartphone.jpg");
         product2.setDescription("Latest model with advanced camera");
 
@@ -91,9 +95,10 @@ public class CardCaptureController {
             else if(authNResponse.getTransStatus().equalsIgnoreCase("Y") || authNResponse.getTransStatus().equalsIgnoreCase("A"))
             {
             	model.addAttribute("result", authNResponse.getEci() + " :: "+ authNResponse.getAuthenticationValue());
-            	model.addAttribute("amount", "100.00");
+            	model.addAttribute("amount", "16.20");
                 model.addAttribute("transactionId", "TXN123456789");
-                model.addAttribute("transactionDate", "Dec 12, 2023 14:30:45");
+                model.addAttribute( "transactionDate",  LocalDateTime.now().format( DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm:ss", Locale.ENGLISH)));
+                //model.addAttribute("transactionDate", "Jan 18, 2026 22:30:45");
                 model.addAttribute("paymentMethod", "VISA •••• 4242");
                 model.addAttribute("email", "user@example.com");
                 return "transaction-success";
@@ -119,9 +124,10 @@ public class CardCaptureController {
             if(authNStatusResponse.getTransStatus().equalsIgnoreCase("Y"))
             {
             	model.addAttribute("result", authNStatusResponse.getEci() + " :: "+ authNStatusResponse.getAuthenticationValue());
-            	model.addAttribute("amount", "100.00");
+             	model.addAttribute("amount", "16.20");
                 model.addAttribute("transactionId", "TXN123456789");
-                model.addAttribute("transactionDate", "Dec 12, 2023 14:30:45");
+                model.addAttribute( "transactionDate",  LocalDateTime.now().format( DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm:ss", Locale.ENGLISH)));
+                //model.addAttribute("transactionDate", "Jan 18, 2026 22:30:45");
                 model.addAttribute("paymentMethod", "VISA •••• 4242");
                 model.addAttribute("email", "user@example.com");
                 return "transaction-success";
